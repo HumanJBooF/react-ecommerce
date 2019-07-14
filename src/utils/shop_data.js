@@ -14,8 +14,8 @@ import asus_2070 from '../assets/img/gpus/asus_2070.jpg';
 import msi_1060 from '../assets/img/gpus/msi_1060.jpg';
 import msi_rx480 from '../assets/img/gpus/msi_rx480.jpg';
 import asus_rx570 from '../assets/img/gpus/asus_rx570.jpg';
-import gigabyte_vega_46 from '../assets/img/gpus/gigabyte_vega_46.jpg';
-import strix_vega from '../assets/img/gpus/strix_vega';
+import gigabyte_vega_46 from '../assets/img/gpus/gigabyte_vega_64.jpg';
+import strix_vega from '../assets/img/gpus/strix_vega.jpg';
 // @motherboards 
 import asus_atx from '../assets/img/motherboards/asus_atx.jpg';
 import msi_x570 from '../assets/img/motherboards/msi_x570.jpg';
@@ -46,7 +46,7 @@ const shopData = [
                 name: 'Intel Core i9-9900k',
                 imageUrl: ninetyNine00k,
                 price: '479.99',
-                description: ' Coffee Lake 8-Core, 16-Thread, 3.6 GHz (5.0 GHz Turbo) LGA 1151 (300 Series) 95W'
+                description: 'Coffee Lake 8-Core, 16-Thread, 3.6 GHz (5.0 GHz Turbo) LGA 1151 (300 Series) 95W'
             },
             {
                 id: 2,
