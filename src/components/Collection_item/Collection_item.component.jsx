@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Collection-item.styles.scss';
+import './Collection_item.styles.scss';
 
 const CollectionItem = ({ id, name, price, imageUrl, description }) => (
     <div className="collection-item">
