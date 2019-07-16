@@ -11,8 +11,8 @@
 		padding: 25px;
 
 		.logo {
-			height: 60%;
-			width: 60%;
+			height: auto;
+			width: 150%;
 
 			&:hover {
 				animation: shake 1s;
@@ -30,6 +30,7 @@
 
 		.option {
 			padding: 10px 15px;
+			cursor: pointer;
 		}
 	}
 }
