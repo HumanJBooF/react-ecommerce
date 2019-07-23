@@ -22,10 +22,12 @@ const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ prompt: 'select_account' });
 
 const signInWithGoogle = () => auth.signInWithPopup(provider);
+const signUpUser = (email, password) => auth.createUserWithEmailAndPassword(email, password)
 
 export {
     auth,
     firestore,
     signInWithGoogle,
+    signUpUser,
     firebase
 }
