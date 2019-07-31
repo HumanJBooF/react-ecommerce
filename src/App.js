@@ -29,11 +29,12 @@ class App extends React.Component {
         const userRef = await firestoreController.createUser(userAuth);
         userRef.onSnapshot(snapshot => this.setState({ user: { id: snapshot.id, ...snapshot.data() } }));
       }
-      this.setState({ user: null })
+      this.setState({ user: userAuth })
     });
   }
 
   render () {
+    console.log(this.state)
     return (
       <Router>
         <Header user={this.state.user} />

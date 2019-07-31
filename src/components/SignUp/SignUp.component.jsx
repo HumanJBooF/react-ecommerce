@@ -36,14 +36,14 @@ class SignUp extends React.Component {
     }
 
 
-    handleChange = () => {
+    handleChange = event => {
         const { name, value } = event.target;
         this.setState({ [name]: value });
     }
 
     validate = (password, confirm) => {
         if (password !== confirm) {
-            this.showAlert(`Passwords don't match`);
+            this.showAlert(`Passwords don't match / Must be at least 6 characters long`);
             return;
         }
         return true;
@@ -99,3 +99,5 @@ class SignUp extends React.Component {
         )
     }
 }
+
+export default SignUp;
