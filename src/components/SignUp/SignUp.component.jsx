@@ -3,7 +3,7 @@ import React from 'react';
 import FormInput from '../Form_input/Form_input.component';
 import CustomButton from '../Custom_button/Custom_button.component';
 // @firebase/auth
-import { signUpUser } from '../../firebase/firebase.utils';
+import { signUpAndInController } from '../../firebase/firebase.utils';
 // @firestore
 import firestoreController from '../../firebase/firebase.firestore';
 // @swal
@@ -26,7 +26,7 @@ class SignUp extends React.Component {
         const { displayName, email, password, confirm } = this.state;
         if (this.validate(password, confirm)) {
             try {
-                const { user } = await signUpUser(email, password);
+                const { user } = await signUpAndInController.signUpEmailAndPassword(email, password);
                 await firestoreController.createUser(user, { displayName });
                 this.setState({ displayName: '', email: '', password: '', confirm: '' });
             } catch (err) {
