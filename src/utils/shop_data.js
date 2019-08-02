@@ -112,49 +112,49 @@ const shopData = [
         routeName: 'gpus',
         items: [
             {
-                id: 1,
+                id: 10,
                 name: 'Geforce RTX 2080ti Founders Edition 11GB',
                 imageUrl: founders_2080ti,
                 price: '1,348.00'
             },
             {
-                id: 2,
+                id: 11,
                 name: 'EVGA RTX 2080 Ti FTW3 Ultra Gaming 11GB',
                 imageUrl: evga_2080ti,
                 price: '1,499.99'
             },
             {
-                id: 3,
+                id: 12,
                 name: 'ASUS ROG STRIX GeForce RTX 2070 Overclocked 8GB',
                 imageUrl: asus_2070,
                 price: '559.99'
             },
             {
-                id: 4,
+                id: 13,
                 name: 'MSI GAMING GeForce RTX 2060 6GB',
                 imageUrl: msi_1060,
                 price: '389.99'
             },
             {
-                id: 5,
+                id: 14,
                 name: 'MSI GAMING Radeon RX 480 GDDR5 8GB',
                 imageUrl: msi_rx480,
                 price: '229.99'
             },
             {
-                id: 6,
+                id: 15,
                 name: 'ASUS ROG Strix Radeon RX 570 4GB Gaming OC Edition',
                 imageUrl: asus_rx570,
                 price: '279.99'
             },
             {
-                id: 7,
+                id: 16,
                 name: 'GIGABYTE Radeon RX Vega 64 6GB',
                 imageUrl: gigabyte_vega_46,
                 price: '399.99'
             },
             {
-                id: 8,
+                id: 17,
                 name: 'ASUS ROG Radeon RX Vega 64 STRIX-RXVEGA64-O8G-GAMING 8GB',
                 imageUrl: strix_vega,
                 price: '949.99'
@@ -167,35 +167,35 @@ const shopData = [
         routeName: 'motherboards',
         items: [
             {
-                id: 1,
+                id: 18,
                 name: 'ASUS ROG Strix X570-E Gaming ATX Motherboard',
                 imageUrl: asus_atx,
                 price: '329.99',
                 description: 'PCIe 4.0, Aura Sync RGB Lighting, 2.5Gbps and Intel Gigabit LAN, Wi-Fi 6 (802.11 ax), Dual M.2 with Heatsinks, SATA 6Gb/s and USB 3.2 Gen 2'
             },
             {
-                id: 2,
+                id: 19,
                 name: 'MSI PRESTIGE X570 CREATION',
                 imageUrl: msi_x570,
                 price: '499.99',
                 description: 'AMD AM4 SATA 6Gb/s M.2 USB 3.2 Wi-Fi 6 Extended-ATX'
             },
             {
-                id: 3,
+                id: 20,
                 name: 'MSI MEG Z390 GODLIKE',
                 imageUrl: msi_z390,
                 price: '599.99',
                 description: 'LGA 1151 (300 Series) Intel Z390 SATA 6Gb/s USB 3.1 Extended ATX Intel Motherboard'
             },
             {
-                id: 4,
+                id: 21,
                 name: 'GIGABYTE Z390 AORUS MASTER',
                 imageUrl: gigabyte_z390,
                 price: '289.99',
                 description: 'LGA 1151 (300 Series) Intel Z390 SATA 6Gb/s ATX Intel Motherboard'
             },
             {
-                id: 5,
+                id: 22,
                 name: 'ASRock Z390 Phantom Gaming 9',
                 imageUrl: asrock_z390,
                 price: '268.99',
@@ -209,31 +209,31 @@ const shopData = [
         routeName: 'ram',
         items: [
             {
-                id: 1,
+                id: 23,
                 name: 'CORSAIR Vengeance LPX 16GB (2 x 8GB) DDR4 3000MHz',
                 imageUrl: corsair_2x8,
                 price: '64.99'
             },
             {
-                id: 2,
+                id: 24,
                 name: 'G.Skill TridentZ RGB Series 16GB (2 x 8GB) DDR4 3600MHz',
                 imageUrl: gskill_2x8,
                 price: '159.99'
             },
             {
-                id: 3,
+                id: 25,
                 name: 'Kingston HyperX FURY 8GB Kit (2x4GB) DDR3 1600MHz',
                 imageUrl: hyperx_fury_2x4,
                 price: '46.99'
             },
             {
-                id: 4,
+                id: 26,
                 name: 'Corsair Dominator Platinum RGB 32GB (2x16GB) DDR4 3200 ',
                 imageUrl: corsair_dominator,
                 price: '224.99'
             },
             {
-                id: 5,
+                id: 27,
                 name: 'G.Skill 16GB (2 x 8GB) Ripjaws V Series DDR4 3200MHz',
                 imageUrl: ripjaws,
                 price: '88.89'
@@ -246,31 +246,31 @@ const shopData = [
         routeName: 'storage',
         items: [
             {
-                id: 1,
+                id: 28,
                 name: 'Samsung SSD 860 EVO 1TB 2.5 Inch SATA III Internal SSD ',
                 imageUrl: evo860,
                 price: '199.99'
             },
             {
-                id: 2,
+                id: 29,
                 name: 'Samsung 970 EVO Plus Series - 500GB PCIe NVMe - M.2 Internal SSD',
                 imageUrl: evo970,
                 price: '129.99'
             },
             {
-                id: 3,
+                id: 30,
                 name: 'WD Black 6TB Performance Hard Drive - 7200 RPM, SATA 6 Gb/s, 256 MB Cache, 3.5"',
                 imageUrl: westernDigital,
                 price: '249.99'
             },
             {
-                id: 4,
+                id: 31,
                 name: 'PNY CS900 120GB 2.5” Sata III Internal Solid State Drive',
                 imageUrl: pny120,
                 price: '29.99'
             },
             {
-                id: 5,
+                id: 32,
                 name: 'WD Black SN750 1TB NVMe Internal Gaming SSD - Gen3 PCIe, M.2 2280, 3D NAND',
                 imageUrl: wd_m2,
                 price: '249.99'
