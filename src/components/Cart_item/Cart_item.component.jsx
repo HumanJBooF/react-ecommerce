@@ -14,10 +14,10 @@ const CartItem = ({ item: { imageUrl, price, dropdown, quantity } }) => (
 )
 
 CartItem.propTypes = {
-    imageUrl: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    dropdown: PropTypes.string.isRequired,
-    quantity: PropTypes.number.isRequired
+    imageUrl: PropTypes.string,
+    price: PropTypes.number,
+    dropdown: PropTypes.string,
+    quantity: PropTypes.number
 }
 
 export default CartItem;
