@@ -28,7 +28,7 @@ const CheckoutPage = ({ cartItems, total }) => (
             />
         )}
         <div className='total'>
-            <div>TOTAL: ${total}</div>
+            <div>TOTAL: ${total.toFixed(2)}</div>
         </div>
     </div>
 )

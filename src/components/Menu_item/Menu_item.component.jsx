@@ -26,7 +26,7 @@ MenuItem.propTypes = {
     size: PropTypes.string,
     history: PropTypes.object,
     linkUrl: PropTypes.string,
-    match: PropTypes.string
+    match: PropTypes.object
 }
 
 export default withRouter(MenuItem);

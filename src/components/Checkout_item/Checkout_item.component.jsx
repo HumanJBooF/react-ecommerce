@@ -12,8 +12,14 @@ const CheckoutItem = ({ cartItem, clearItem }) => {
             <div className='image-container'>
                 <img src={imageUrl} alt="item" />
             </div>
-            <div className='name'>{description ? description : name}</div>
-            <div className='quantity'>{quantity}</div>
+            <div className='name'>
+                {description ? description : name}
+            </div>
+            <div className='quantity'>
+                <div className='arrow'>&#10094;</div>
+                <div className='value'>{quantity}</div>
+                <div className='arrow'>&#10095;</div>
+            </div>
             <div className='price'>${parseInt(price).toFixed(2)}</div>
             <div
                 className='remove-button'
