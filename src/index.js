@@ -2,7 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 // @redux
 import { Provider } from 'react-redux';
-import store from './redux/store';
+import { store, persistor } from './redux/store';
+// @redux-persist
+import { PersistGate } from 'redux-persist/integration/react';
 // @app
 import App from './App';
 // @styles
@@ -10,7 +12,9 @@ import './index.css';
 
 ReactDOM.render(
     <Provider store={store}>
-        <App />
+        <PersistGate persistor={persistor}>
+            <App />
+        </PersistGate>
     </Provider>,
     document.getElementById('root')
 );

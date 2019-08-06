@@ -1,5 +1,5 @@
 import TYPES from "../constants/types";
-import { addItemToCart } from './utils/cart.utils';
+import cartUtils from './utils/cart.utils';
 
 const initialState = {
     hidden: true,
@@ -16,7 +16,12 @@ const cartReducer = (state = initialState, action) => {
         case TYPES.ADD_ITEM:
             return {
                 ...state,
-                cartItems: addItemToCart(state.cartItems, action.payload)
+                cartItems: cartUtils.addItemToCart(state.cartItems, action.payload)
+            }
+        case TYPES.REMOVE_ITEM:
+            return {
+                ...state,
+                cartItems: cartUtils.removeItemFromCart(state.cartItems, action.payload)
             }
         case TYPES.CLEAR_ITEM_FROM_CART:
             return {
