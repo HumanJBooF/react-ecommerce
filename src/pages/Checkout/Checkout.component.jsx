@@ -12,6 +12,8 @@ import './Checkout.styles.scss';
 
 const headerBlockTitles = ['Product', 'Description', 'Quantity', 'Price', 'Remove'];
 
+const currencyFormat = num => '$' + num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+
 const CheckoutPage = ({ cartItems, total }) => (
     <div className='checkout-page'>
         <div className='checkout-header'>
@@ -28,7 +30,7 @@ const CheckoutPage = ({ cartItems, total }) => (
             />
         )}
         <div className='total'>
-            <div>TOTAL: ${total.toFixed(2)}</div>
+            <div>TOTAL: {currencyFormat(parseInt(total))}</div>
         </div>
     </div>
 )

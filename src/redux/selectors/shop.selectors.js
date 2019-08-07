@@ -4,19 +4,19 @@ const selectShop = state => state.shop;
 
 const selectCollections = createSelector([selectShop], shop => shop.collections);
 
-const selectCollectionsForPreview = createSelector(
-    [selectCollections],
-    collections => Object.keys(collections).map(key => collections[key])
-);
-
 const selectCollection = collectionUrl => createSelector(
     [selectCollections],
     collections => collections[collectionUrl]
 );
 
+const selectCollectionsForPreview = createSelector(
+    [selectCollections],
+    collections => Object.keys(collections).map(key => collections[key])
+);
+
 export {
+    selectCollection,
     selectCollections,
-    selectCollectionsForPreview,
-    selectCollection
+    selectCollectionsForPreview
 }
 

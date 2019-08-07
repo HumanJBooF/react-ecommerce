@@ -35,8 +35,8 @@ import westernDigital from '../assets/img/storage/western.jpg';
 import pny120 from '../assets/img/storage/pny120.jpg';
 import wd_m2 from '../assets/img/storage/wd_m.2.jpg';
 
-const shopData = [
-    {
+const shopData = {
+    cpus: {
         id: 1,
         title: 'CPUs',
         routeName: 'cpus',
@@ -92,7 +92,7 @@ const shopData = [
                 id: 7,
                 name: 'AMD 2nd Gen RYZEN Threadripper 2990WX',
                 imageUrl: threadripper,
-                price: '1,699',
+                price: '1699',
                 description: '32-Core, 64-Thread, 4.2 GHz Max Boost (3.0 GHz Base)',
                 dropdown: 'RYZEN 2990WX'
             },
@@ -100,21 +100,21 @@ const shopData = [
                 id: 8,
                 name: 'Intel Core i9-9980XE',
                 imageUrl: extreme,
-                price: '1,999',
+                price: '1999',
                 description: 'Skylake X 18-Core 3.0 GHz (4.4 GHz Turbo) LGA 2066 165W',
                 dropdown: 'i9-9980XE'
             },
             {
                 id: 9,
                 name: 'Intel Core i9-9960X',
-                imageUrl: '',
-                price: '1,699',
+                imageUrl: ninetySix00k,
+                price: '1699',
                 description: 'Skylake X 16-Core 3.1 GHz (4.4 GHz Turbo) LGA 2066 165W',
                 dropdown: 'i9-9960X'
             }
         ]
     },
-    {
+    gpus: {
         id: 2,
         title: 'GPUs',
         routeName: 'gpus',
@@ -123,14 +123,14 @@ const shopData = [
                 id: 10,
                 name: 'Geforce RTX 2080ti Founders Edition 11GB',
                 imageUrl: founders_2080ti,
-                price: '1,348',
+                price: '1348',
                 dropdown: 'Founders RTX 2080ti'
             },
             {
                 id: 11,
                 name: 'EVGA RTX 2080ti FTW3 Ultra Gaming 11GB',
                 imageUrl: evga_2080ti,
-                price: '1,499',
+                price: '1499',
                 dropdown: 'EVGA RTX 2080ti'
             },
             {
@@ -177,7 +177,7 @@ const shopData = [
             }
         ]
     },
-    {
+    motherboards: {
         id: 3,
         title: 'Motherboards',
         routeName: 'motherboards',
@@ -224,7 +224,7 @@ const shopData = [
             }
         ]
     },
-    {
+    ram: {
         id: 4,
         title: 'RAM',
         routeName: 'ram',
@@ -266,7 +266,7 @@ const shopData = [
             }
         ]
     },
-    {
+    storage: {
         id: 5,
         title: 'Hdd/Ssd/m.2',
         routeName: 'storage',
@@ -308,6 +308,6 @@ const shopData = [
             }
         ]
     }
-];
+};
 
 export default shopData;

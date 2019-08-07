@@ -8,6 +8,8 @@ import CustomButton from '../Custom_button/Custom_button.component';
 // @styles
 import './Collection_item.styles.scss';
 
+const currencyFormat = num => '$' + num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+
 const CollectionItem = ({ item, addItem }) => {
     const { name, description, price, imageUrl } = item;
     return (
@@ -21,7 +23,7 @@ const CollectionItem = ({ item, addItem }) => {
             </div>
             <div className="collection-item-footer">
                 <div className="name">{name}</div>
-                <div className="price">${price}</div>
+                <div className="price">{currencyFormat(parseFloat(price))}</div>
             </div>
             <CustomButton
                 onClick={() => addItem(item)}

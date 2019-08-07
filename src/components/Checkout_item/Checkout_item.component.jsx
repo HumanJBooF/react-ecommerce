@@ -5,6 +5,9 @@ import { connect } from 'react-redux';
 import { clearItemFromCart, addItem, removeItem } from '../../redux/actions/cart.actions'
 // @styles
 import './Checkout_item.styles.scss';
+
+const currencyFormat = num => '$' + num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+
 const CheckoutItem = ({ cartItem, clearItem, addItem, removeItem, key }) => {
     const { description, name, imageUrl, price, quantity } = cartItem;
     return (
@@ -24,7 +27,7 @@ const CheckoutItem = ({ cartItem, clearItem, addItem, removeItem, key }) => {
                     &#10095;
                 </div>
             </div>
-            <div className='price'>${parseInt(price).toFixed(2)}</div>
+            <div className='price'>{currencyFormat(parseInt(price))}</div>
             <div className='remove-button' onClick={() => clearItem(cartItem)}>
                 &#10006;
             </div>
