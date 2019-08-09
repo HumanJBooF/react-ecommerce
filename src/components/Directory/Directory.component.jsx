@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 // @redux
 import { connect } from 'react-redux';
 // @reselect
@@ -17,10 +16,6 @@ const Directory = ({ sections }) => (
         )}
     </div>
 )
-
-Directory.propTypes = {
-    sections: PropTypes.array
-}
 
 const mapStateToProps = createStructuredSelector({
     sections: selectDirectorySections

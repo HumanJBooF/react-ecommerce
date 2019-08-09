@@ -6,9 +6,8 @@ import CustomButton from '../Custom_button/Custom_button.component';
 import { signUpAndInController } from '../../firebase/firebase.utils';
 // @firestore
 import firestoreController from '../../firebase/firebase.firestore';
-// @swal
-import Swal from 'sweetalert2';
-import withReactContent from 'sweetalert2-react-content';
+// @utils
+import showAlert from '../../utils/sweetAlert';
 // @styles
 import './SignUp.styles.scss';
 
@@ -35,7 +34,6 @@ class SignUp extends React.Component {
         }
     }
 
-
     handleChange = event => {
         const { name, value } = event.target;
         this.setState({ [name]: value });
@@ -43,15 +41,10 @@ class SignUp extends React.Component {
 
     validate = (password, confirm) => {
         if (password !== confirm) {
-            this.showAlert(`Passwords don't match / Must be at least 6 characters long`);
+            showAlert([`Woops`, `Passwords don't match / Must be at least 6 characters long`, 'Try again'], false)
             return;
         }
         return true;
-    }
-
-    showAlert = message => {
-        const Alert = withReactContent(Swal);
-        return Alert.fire(message)
     }
 
     render () {

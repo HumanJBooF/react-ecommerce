@@ -1,15 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 // @redux
 import { connect } from 'react-redux';
 import { clearItemFromCart, addItem, removeItem } from '../../redux/actions/cart.actions'
 // @styles
 import './Checkout_item.styles.scss';
 
-const currencyFormat = num => '$' + num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
 
 const CheckoutItem = ({ cartItem, clearItem, addItem, removeItem, key }) => {
+    const currencyFormat = num => '$' + num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
     const { description, name, imageUrl, price, quantity } = cartItem;
+
     return (
         <div className='checkout-item'>
             <div className='image-container'>
@@ -33,13 +33,6 @@ const CheckoutItem = ({ cartItem, clearItem, addItem, removeItem, key }) => {
             </div>
         </div>
     )
-}
-
-CheckoutItem.propTypes = {
-    cartItem: PropTypes.object,
-    clearItem: PropTypes.func,
-    addItem: PropTypes.func,
-    removeItem: PropTypes.func
 }
 
 const mapDispatchToProps = dispatch => ({

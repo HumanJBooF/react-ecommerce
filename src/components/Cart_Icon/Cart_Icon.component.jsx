@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 // @redux
 import { connect } from 'react-redux';
 import { toggleCartHidden } from '../../redux/actions/cart.actions';
@@ -17,11 +16,6 @@ const CartIcon = ({ toggleCartHidden, itemCount }) => (
         <div className='item-count'>{itemCount}</div>
     </div>
 )
-
-CartIcon.propTypes = {
-    toggleCartHidden: PropTypes.func.isRequired,
-    itemCount: PropTypes.number.isRequired
-}
 
 const mapDispatchToProps = dispatch => ({
     toggleCartHidden: () => dispatch(toggleCartHidden())

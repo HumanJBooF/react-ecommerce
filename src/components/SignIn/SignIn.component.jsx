@@ -4,6 +4,8 @@ import FormInput from '../Form_input/Form_input.component';
 import CustomButton from '../Custom_button/Custom_button.component';
 // @firebase
 import { signUpAndInController } from '../../firebase/firebase.utils';
+// @utils
+import showAlert from '../../utils/sweetAlert';
 // @styles
 import './SignIn.styles.scss';
 
@@ -20,7 +22,7 @@ class SignIn extends React.Component {
             await signUpAndInController.signInWithEmailAndPassword(email, password);
             this.setState({ email: '', password: '' });
         } catch (err) {
-            console.log(err);
+            showAlert(['Something went wrong!', 'Double check your username and password', 'Try Again'], false)
         }
 
     }

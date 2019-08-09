@@ -8,10 +8,11 @@ import CustomButton from '../Custom_button/Custom_button.component';
 // @styles
 import './Collection_item.styles.scss';
 
-const currencyFormat = num => '$' + num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
 
 const CollectionItem = ({ item, addItem }) => {
+    const currencyFormat = num => '$' + num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
     const { name, description, price, imageUrl } = item;
+
     return (
         <div className="collection-item">
             <div

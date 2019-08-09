@@ -1,6 +1,5 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import PropTypes from 'prop-types';
 // @redux
 import { connect } from 'react-redux';
 import { toggleCartHidden } from '../../redux/actions/cart.actions';
@@ -38,10 +37,6 @@ const CartDropDown = ({ cartItems, history, dispatch }) => (
         </CustomButtom>
     </div>
 )
-
-CartDropDown.propTypes = {
-    cartItems: PropTypes.array.isRequired
-}
 
 const mapStateToProps = createStructuredSelector({
     cartItems: selectCartItems

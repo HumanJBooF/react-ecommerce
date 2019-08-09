@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 // @styles
 import './Cart_item.styles.scss';
 
@@ -12,12 +11,5 @@ const CartItem = ({ item: { imageUrl, price, dropdown, quantity } }) => (
         </div>
     </div>
 )
-
-CartItem.propTypes = {
-    imageUrl: PropTypes.string,
-    price: PropTypes.number,
-    dropdown: PropTypes.string,
-    quantity: PropTypes.number
-}
 
 export default CartItem;

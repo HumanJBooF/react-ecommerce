@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 // @redux
 import { connect } from 'react-redux';
 // @reselct
@@ -39,14 +38,9 @@ const Header = ({ user, hidden }) => (
     </div>
 )
 
-Header.propTypes = {
-    user: PropTypes.object,
-    hidden: PropTypes.bool
-}
-
 const mapStateToProps = createStructuredSelector({
     user: selectCurrentUser,
     hidden: selectCartHidden
-})
+});
 
 export default connect(mapStateToProps)(Header);
