@@ -25,9 +25,9 @@ const Header = ({ user, hidden }) => (
             <Link className='option' to='/shop'>
                 Shop
             </Link>
-            <Link className='option' to='/contact'>
+            <a target='_blank' href='https://joshualeboeuf.dev/react_portfolio/' className='option'>
                 Contact
-            </Link>
+            </a>
             {user
                 ? <div className='option' onClick={() => auth.signOut()}>SIGN OUT</div>
                 : <Link className='option' to='/signin'>SIGN IN</Link>
