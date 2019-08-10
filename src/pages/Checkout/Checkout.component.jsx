@@ -30,16 +30,18 @@ const CheckoutPage = ({ cartItems, total }) => (
             />
         )}
         <div className='total'>
-            <div className='total-price'>TOTAL: {currencyFormat(parseInt(total))}</div>
+            <div className='button-total'>
+                TOTAL: {currencyFormat(parseInt(total))}
+                <div className='stripe'>
+                    <StripeCheckoutButton price={total} />
+                </div>
+            </div>
             <div className='test-warning'>
                 *This is for test purposes only. Stripe provides a CC number to use below.*
                 <br />
                 *All other cards will cause an error/not get charged*
                 <br />
                 4242 4242 4242 4242 - Exp: Anything time after now - CVV: 123
-            </div>
-            <div className='stripe'>
-                <StripeCheckoutButton price={total} />
             </div>
         </div>
     </div>
