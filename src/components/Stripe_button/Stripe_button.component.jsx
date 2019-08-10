@@ -1,5 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+// @redux
+import { connect } from 'react-redux';
+import { clearCart } from '../../redux/actions/cart.actions';
 // @stripe
 import StripeCheckout from 'react-stripe-checkout';
 // @utils
@@ -7,7 +10,7 @@ import showAlert from '../../utils/sweetAlert';
 // @images
 import Logo from '../../assets/img/logo/logo.png';
 
-const StripeCheckoutButton = ({ price, history }) => {
+const StripeCheckoutButton = ({ price, history, clearCart }) => {
     const priceInCents = price * 100;
     const publishKey = process.env.REACT_APP_STRIPE_PUBLISH_KEY;
 
@@ -19,9 +22,13 @@ const StripeCheckoutButton = ({ price, history }) => {
                 'Success!',
                 `You bought ${currencyFormat(price)} worth of computer parts!`,
                 'Go to storefront'
-            ],
-                true
-            ).then(result => result ? history.push('/') : null);
+            ], true)
+                .then(result => {
+                    if (result) {
+                        clearCart();
+                        history.push('/');
+                    }
+                });
         }
     }
 
@@ -41,4 +48,8 @@ const StripeCheckoutButton = ({ price, history }) => {
     )
 }
 
-export default withRouter(StripeCheckoutButton);
+const mapDispatchToProps = dispatch => ({
+    clearCart: () => dispatch(clearCart())
+});
+
+export default connect(null, mapDispatchToProps)(withRouter(StripeCheckoutButton));

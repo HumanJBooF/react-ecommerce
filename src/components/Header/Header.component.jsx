@@ -25,7 +25,12 @@ const Header = ({ user, hidden }) => (
             <Link className='option' to='/shop'>
                 Shop
             </Link>
-            <a target='_blank' href='https://joshualeboeuf.dev/react_portfolio/' className='option'>
+            <a
+                target='_blank'
+                href='https://joshualeboeuf.dev/react_portfolio/'
+                className='option'
+                rel="noopener noreferrer"
+            >
                 Contact
             </a>
             {user
