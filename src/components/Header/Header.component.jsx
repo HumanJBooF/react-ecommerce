@@ -14,33 +14,32 @@ import CartDropDown from '../Cart_dropdown/Cart_dropdown.component';
 // @image
 import Logo from '../../assets/img/logo/logo.png';
 // @styles
-import './Header.styles.scss';
+import { HeaderContainer, LogoContainer, OptionsContainer, OptionDiv, OptionLink, OptionA, ImgLogo } from './Header.styles';
 
 const Header = ({ user, hidden }) => (
-    <div className='header'>
-        <Link className='logo-container' to='/'>
-            <img src={Logo} alt='LOGO' className='logo' />
-        </Link>
-        <div className='options'>
-            <Link className='option' to='/shop'>
+    <HeaderContainer>
+        <LogoContainer to='/'>
+            <ImgLogo src={Logo} alt='LOGO' />
+        </LogoContainer>
+        <OptionsContainer>
+            <OptionLink to='/shop'>
                 Shop
-            </Link>
-            <a
+            </OptionLink>
+            <OptionA
                 target='_blank'
                 href='https://joshualeboeuf.dev/react_portfolio/'
-                className='option'
                 rel="noopener noreferrer"
             >
                 Contact
-            </a>
+            </OptionA>
             {user
-                ? <div className='option' onClick={() => auth.signOut()}>SIGN OUT</div>
-                : <Link className='option' to='/signin'>SIGN IN</Link>
+                ? <OptionDiv onClick={() => auth.signOut()}>SIGN OUT</OptionDiv>
+                : <OptionLink to='/signin'>SIGN IN</OptionLink>
             }
             <CartIcon />
-        </div>
+        </OptionsContainer>
         {hidden ? null : <CartDropDown />}
-    </div>
+    </HeaderContainer>
 )
 
 const mapStateToProps = createStructuredSelector({
