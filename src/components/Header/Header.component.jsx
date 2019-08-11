@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 // @redux
 import { connect } from 'react-redux';
 // @reselct
@@ -14,7 +13,7 @@ import CartDropDown from '../Cart_dropdown/Cart_dropdown.component';
 // @image
 import Logo from '../../assets/img/logo/logo.png';
 // @styles
-import { HeaderContainer, LogoContainer, OptionsContainer, OptionDiv, OptionLink, OptionA, ImgLogo } from './Header.styles';
+import { HeaderContainer, LogoContainer, OptionsContainer, OptionLink, ImgLogo } from './Header.styles';
 
 const Header = ({ user, hidden }) => (
     <HeaderContainer>
@@ -25,15 +24,16 @@ const Header = ({ user, hidden }) => (
             <OptionLink to='/shop'>
                 Shop
             </OptionLink>
-            <OptionA
+            <OptionLink
+                as='a'
                 target='_blank'
                 href='https://joshualeboeuf.dev/react_portfolio/'
                 rel="noopener noreferrer"
             >
                 Contact
-            </OptionA>
+            </OptionLink>
             {user
-                ? <OptionDiv onClick={() => auth.signOut()}>SIGN OUT</OptionDiv>
+                ? <OptionLink as='div' onClick={() => auth.signOut()}>SIGN OUT</OptionLink>
                 : <OptionLink to='/signin'>SIGN IN</OptionLink>
             }
             <CartIcon />
