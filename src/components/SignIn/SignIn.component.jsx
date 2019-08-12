@@ -27,6 +27,15 @@ class SignIn extends React.Component {
 
     }
 
+    handleGoogle = async event => {
+        event.preventDefault();
+        try {
+            await signUpAndInController.signInWithGoogle();
+        } catch (err) {
+            showAlert(['Something went wrong!', 'Please go ahead and', 'Try Again'], false)
+        }
+    }
+
     handleChange = event => {
         const { name, value } = event.target;
         this.setState({ [name]: value });
@@ -58,11 +67,11 @@ class SignIn extends React.Component {
                     <div className='buttons'>
                         <CustomButton type='submit'>Sign In</CustomButton>
                         <CustomButton
-                            onClick={signUpAndInController.signInWithGoogle}
+                            onClick={this.handleGoogle}
                             isGoogleSignIn
                         >
                             Google Sign In
-                            </CustomButton>
+                        </CustomButton>
                     </div>
                 </form>
             </div>
