@@ -9,7 +9,7 @@ import firestoreController from '../../firebase/firebase.firestore';
 // @utils
 import showAlert from '../../utils/sweetAlert';
 // @styles
-import './SignUp.styles.scss';
+import { SignUpContainer, TitleContainer } from './SignUp.styles';
 
 class SignUp extends React.Component {
 
@@ -50,8 +50,8 @@ class SignUp extends React.Component {
     render () {
         const { displayName, email, password, confirm } = this.state;
         return (
-            <div className='sign-up'>
-                <h2 className='title'>I do not have an account</h2>
+            <SignUpContainer>
+                <TitleContainer>I do not have an account</TitleContainer>
                 <div>Sign up with your email and password</div>
                 <form onSubmit={this.handleSubmit} className="sign-up-form">
                     <FormInput
@@ -88,7 +88,7 @@ class SignUp extends React.Component {
                     />
                     <CustomButton type='submit'>Sign Up</CustomButton>
                 </form>
-            </div>
+            </SignUpContainer>
         )
     }
 }

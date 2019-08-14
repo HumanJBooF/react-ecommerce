@@ -7,7 +7,8 @@ import { signUpAndInController } from '../../firebase/firebase.utils';
 // @utils
 import showAlert from '../../utils/sweetAlert';
 // @styles
-import './SignIn.styles.scss';
+import { SignInContainer, ButtonsContainer } from './Signin.styles';
+// import './SignIn.styles.scss';
 
 class SignIn extends React.Component {
     state = {
@@ -43,7 +44,7 @@ class SignIn extends React.Component {
 
     render () {
         return (
-            <div className='sign-in'>
+            <SignInContainer>
                 <h2>I already have an account</h2>
                 <div>Sign in with your email and password</div>
 
@@ -64,7 +65,7 @@ class SignIn extends React.Component {
                         label='password'
                         required
                     />
-                    <div className='buttons'>
+                    <ButtonsContainer>
                         <CustomButton type='submit'>Sign In</CustomButton>
                         <CustomButton
                             onClick={this.handleGoogle}
@@ -72,9 +73,9 @@ class SignIn extends React.Component {
                         >
                             Google Sign In
                         </CustomButton>
-                    </div>
+                    </ButtonsContainer>
                 </form>
-            </div>
+            </SignInContainer>
         )
     }
 }

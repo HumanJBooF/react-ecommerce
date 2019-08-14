@@ -8,44 +8,48 @@ import { selectCartItems, selectCartTotal } from '../../redux/selectors/cart.sel
 import CheckoutItem from '../../components/Checkout_item/Checkout_item.component';
 import StripeCheckoutButton from '../../components/Stripe_button/Stripe_button.component';
 // @styles
-import './Checkout.styles.scss';
+import { CheckoutPageContainer, CheckoutHeader, HeaderBlock, TotalContainer, ButtonTotal, StripeContainer, TestWarningContainer } from './Checkout.styles';
 
-const headerBlockTitles = ['Product', 'Description', 'Quantity', 'Price', 'Remove'];
 
-const currencyFormat = num => '$' + num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
 
-const CheckoutPage = ({ cartItems, total }) => (
-    <div className='checkout-page'>
-        <div className='checkout-header'>
-            {headerBlockTitles.map((el, i) =>
-                <div key={i} className='header-block'>
-                    <div>{el}</div>
-                </div>
+const CheckoutPage = ({ cartItems, total }) => {
+
+    const headerBlockTitles = ['Product', 'Description', 'Quantity', 'Price', 'Remove'];
+    const currencyFormat = num => '$' + num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+
+    return (
+        <CheckoutPageContainer>
+            <CheckoutHeader>
+                {headerBlockTitles.map((el, i) =>
+                    <HeaderBlock key={i} className='header-block'>
+                        <div>{el}</div>
+                    </HeaderBlock>
+                )}
+            </CheckoutHeader>
+            {cartItems.map(cartItem =>
+                <CheckoutItem
+                    key={cartItem.id}
+                    cartItem={cartItem}
+                />
             )}
-        </div>
-        {cartItems.map(cartItem =>
-            <CheckoutItem
-                key={cartItem.id}
-                cartItem={cartItem}
-            />
-        )}
-        <div className='total'>
-            <div className='button-total'>
-                TOTAL: {currencyFormat(parseInt(total))}
-                <div className='stripe'>
-                    <StripeCheckoutButton price={total} />
-                </div>
-            </div>
-            <div className='test-warning'>
-                *This is for test purposes only. Stripe provides a CC number to use below.*
+            <TotalContainer>
+                <ButtonTotal>
+                    TOTAL: {currencyFormat(parseInt(total))}
+                    <StripeContainer>
+                        <StripeCheckoutButton price={total} />
+                    </StripeContainer>
+                </ButtonTotal>
+                <TestWarningContainer>
+                    *This is for test purposes only. Stripe provides a CC number to use below.*
                 <br />
-                *All other cards will cause an error/not get charged*
+                    *All other cards will cause an error/not get charged*
                 <br />
-                4242 4242 4242 4242 - Exp: Anything time after now - CVV: 123
-            </div>
-        </div>
-    </div>
-)
+                    4242 4242 4242 4242 - Exp: Anything time after now - CVV: 123
+            </TestWarningContainer>
+            </TotalContainer>
+        </CheckoutPageContainer>
+    )
+}
 
 const mapStateToProps = createStructuredSelector({
     cartItems: selectCartItems,

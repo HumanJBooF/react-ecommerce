@@ -3,13 +3,13 @@ import React from 'react';
 import SignIn from '../../components/SignIn/SignIn.component';
 import SignUp from '../../components/SignUp/SignUp.component';
 // @styles
-import './User_portal.styles.scss';
+import { SignInAndUpContainer } from './User_portal.styles';
 
 const UserPortal = () => (
-    <div className='sign-in-and-sign-up'>
+    <SignInAndUpContainer>
         <SignIn />
         <SignUp />
-    </div>
+    </SignInAndUpContainer>
 );
 
 export default UserPortal;
