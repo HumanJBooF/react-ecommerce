@@ -3,10 +3,15 @@ import PropTypes from 'prop-types';
 // @redux
 import { connect } from 'react-redux';
 import { addItem } from '../../redux/actions/cart.actions';
-// @components
-import CustomButton from '../Custom_button/Custom_button.component';
 // @styles
-import './Collection_item.styles.scss';
+import {
+    CollectionItemContainer,
+    CollectionFooterContainer,
+    AddButton,
+    NameContainer,
+    PriceContainer,
+    BackgroundImage
+} from './Collection_item.styles';
 
 
 const CollectionItem = ({ item, addItem }) => {
@@ -14,25 +19,19 @@ const CollectionItem = ({ item, addItem }) => {
     const { name, description, price, imageUrl } = item;
 
     return (
-        <div className="collection-item">
-            <div
-                className="image"
-                style={{ backgroundImage: `url(${imageUrl})` }}
-            />
-            <div className='description'>
-                {description ? description : null}
-            </div>
-            <div className="collection-item-footer">
-                <div className="name">{name}</div>
-                <div className="price">{currencyFormat(parseFloat(price))}</div>
-            </div>
-            <CustomButton
-                onClick={() => addItem(item)}
-                inverted
-            >
+        <CollectionItemContainer>
+            <BackgroundImage imageUrl={imageUrl} />
+            <div>{description ? description : null}</div>
+            <CollectionFooterContainer>
+                <NameContainer>{name}</NameContainer>
+                <PriceContainer>
+                    {currencyFormat(parseFloat(price))}
+                </PriceContainer>
+            </CollectionFooterContainer>
+            <AddButton onClick={() => addItem(item)} inverted>
                 Add to Cart
-            </CustomButton>
-        </div>
+            </AddButton>
+        </CollectionItemContainer>
     );
 }
 
